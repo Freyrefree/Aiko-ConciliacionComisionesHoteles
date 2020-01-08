@@ -116,7 +116,7 @@ Public Class ConciliacionComisionesHoteles
 
 
     Private Sub btnBDBCD_Click(sender As Object, e As EventArgs) Handles btnBDBCD.Click
-
+        'DTPInicio lectura hoja
         ExaminarExcel(txt_excel_edo, cmb_hoja_edo)
 
     End Sub
