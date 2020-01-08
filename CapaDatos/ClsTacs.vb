@@ -56,7 +56,7 @@ Namespace CapaDatos
 
             Catch ex As Exception
 
-                MsgBox(ex.Message & " " & " ERROR 152 Tacs")
+                MsgBox(ex.Message & " " & " ERROR 158 Tacs")
 
                 Return 0
             Finally
