@@ -7,7 +7,7 @@ Imports CapaDatos.CapaDatos
 Imports System.IO
 Imports ExcelDataReader
 Imports System.Globalization
-
+Imports System.Text.RegularExpressions
 
 Namespace CapaNegocio
 
@@ -216,7 +216,87 @@ Namespace CapaNegocio
 
                     dtCloned.AcceptChanges()
 
+
+
                     If dtCloned.Rows.Count > 0 Then
+
+
+                        'For Each row As DataRow In dtCloned.Rows
+                        '    Dim PayeeIDfromPayor As String
+                        '    Dim Iata As String
+                        '    Dim AgencyZip As String
+                        '    Dim PaymentID As String
+                        '    Dim ChequeNumber As String
+                        '    Dim PayDate As String
+                        '    Dim RoomNights As String
+
+                        '    PayeeIDfromPayor = row("Payee ID from Payor")
+                        '    If (PayeeIDfromPayor <> "" Or PayeeIDfromPayor IsNot Nothing) Then
+                        '        PayeeIDfromPayor = Regex.Match(PayeeIDfromPayor, "\d+").Value
+                        '    End If
+
+
+
+                        '    '****************************************************************************
+                        '    Iata = Convert.ToInt64(If(TypeOf row("Iata") Is DBNull, 0, row("Iata")))
+
+                        '    If (Iata <> "" Or Iata IsNot Nothing) Then
+                        '        Iata = Regex.Match(Iata, "\d+").Value
+                        '    End If
+
+
+                        '    '****************************************************************************
+                        '    AgencyZip = Convert.ToInt64(If(TypeOf row("Agency Zip") Is DBNull, 0, row("Agency Zip")))
+
+                        '    If (AgencyZip <> "" Or AgencyZip IsNot Nothing) Then
+                        '        AgencyZip = Regex.Match(AgencyZip, "\d+").Value
+                        '    End If
+                        '    '****************************************************************************
+                        '    PaymentID = Convert.ToInt64(If(TypeOf row("Payment ID") Is DBNull, 0, row("Payment ID")))
+
+                        '    If (PaymentID <> "" Or PaymentID IsNot Nothing) Then
+                        '        PaymentID = Regex.Match(PaymentID, "\d+").Value
+                        '    End If
+                        '    '****************************************************************************
+                        '    ChequeNumber = Convert.ToInt64(If(TypeOf row("Cheque Number") Is DBNull, 0, row("Cheque Number")))
+
+                        '    If (ChequeNumber <> "" Or ChequeNumber IsNot Nothing) Then
+                        '        ChequeNumber = Regex.Match(ChequeNumber, "\d+").Value
+                        '    End If
+                        '    '****************************************************************************
+                        '    PayDate = Convert.ToInt64(If(TypeOf row("Pay Date") Is DBNull, 0, row("Pay Date")))
+
+                        '    If (PayDate <> "" Or PayDate IsNot Nothing) Then
+                        '        PayDate = Regex.Match(PayDate, "\d+").Value
+                        '    End If
+                        '    '****************************************************************************
+                        '    RoomNights = Convert.ToInt64(If(TypeOf row("Room Nights") Is DBNull, 0, row("Room Nights")))
+
+                        '    If (RoomNights <> "" Or RoomNights IsNot Nothing) Then
+                        '        RoomNights = Regex.Match(RoomNights, "\d+").Value
+                        '    End If
+                        '    '****************************************************************************
+
+                        '    PayeeIDfromPayor = Convert.ToInt64(PayeeIDfromPayor)
+                        '    Iata = Convert.ToInt64(Iata)
+                        '    AgencyZip = Convert.ToInt64(AgencyZip)
+                        '    PaymentID = Convert.ToInt64(PaymentID)
+                        '    ChequeNumber = Convert.ToInt64(ChequeNumber)
+                        '    PayDate = Convert.ToInt64(PayDate)
+                        '    RoomNights = Convert.ToInt64(RoomNights)
+
+                        '    row("Payee ID from Payor") = PayeeIDfromPayor
+                        '    row("Iata") = Iata
+                        '    row("Agency Zip") = AgencyZip
+                        '    row("Payment ID") = PaymentID
+                        '    row("Cheque Number") = ChequeNumber
+                        '    row("Pay Date") = PayDate
+                        '    row("Room Nights") = RoomNights
+                        '    '****************************************************************************
+
+
+
+                        'Next
 
 
                         If (CN_DatosTacs()) Then

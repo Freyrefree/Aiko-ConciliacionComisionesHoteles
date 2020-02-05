@@ -9,7 +9,7 @@ Namespace CapaDatos
         Private leer As SqlDataReader
         Private tabla As DataTable = New DataTable()
         Private comando As SqlCommand = New SqlCommand()
-        'Private sqlBulkCopy As New SqlBulkCopy(conexion.Conexion)
+
 
         Public NombreConciliacionPosadas As String
         Public idProveedor As Int32

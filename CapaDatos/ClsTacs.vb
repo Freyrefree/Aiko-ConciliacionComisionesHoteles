@@ -212,14 +212,15 @@ Namespace CapaDatos
                 SqlBulkCopy.ColumnMappings.Add("Last Name", "LastName")
                 SqlBulkCopy.ColumnMappings.Add("First Name", "FirstName")
                 SqlBulkCopy.ColumnMappings.Add("Txn Cd", "TxnCd")
-                'Try
-                SqlBulkCopy.ColumnMappings.Add("Confirmation", "Confirmation")
+
+                Try
+                    SqlBulkCopy.ColumnMappings.Add("Confirmation", "Confirmation")
                     SqlBulkCopy.ColumnMappings.Add("Arrival", "Arrival")
-                'Catch ex As Exception
-                'Throw
+                Catch ex As Exception
 
 
-                'End Try
+
+                End Try
                 SqlBulkCopy.ColumnMappings.Add("Departure", "Departure")
                 SqlBulkCopy.ColumnMappings.Add("Report Revenue", "ReportRevenue")
                 SqlBulkCopy.ColumnMappings.Add("Report Com", "ReportCom")
