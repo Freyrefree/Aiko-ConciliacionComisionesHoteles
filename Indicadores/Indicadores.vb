@@ -668,7 +668,7 @@ Public Class Indicadores
                            If RadioRangoTiempo.Checked Then
                                RegistrosEnFecha = conciliacionesProvRepository.tacsPagadas.Where(Function(x) x.mesProveedor >= FechaInicial And x.mesProveedor <= FechaFinal).ToList()
                                TotalRegistros = conciliacionesProvRepository.tacs.Where(Function(x) x.mesProveedor >= FechaInicial And x.mesProveedor <= FechaFinal).Count()
-                               MontoTotal = conciliacionesProvRepository.tacs.Where(Function(x) x.mesProveedor >= FechaInicial And x.mesProveedor <= FechaFinal).Where(Function(x) x.PayCom IsNot Nothing).Sum(Function(x) ConvertStringToDecimal(x.PayCom.Value))
+                               MontoTotal = conciliacionesProvRepository.tacs.Where(Function(x) x.mesProveedor >= FechaInicial And x.mesProveedor <= FechaFinal).Where(Function(x) x.PayCom IsNot Nothing).ToList().Sum(Function(x) ConvertStringToDecimal(x.PayCom.Value))
                            ElseIf RadioPeriodo.Checked Then
                                RegistrosEnFecha = conciliacionesProvRepository.tacsPagadas.Where(Function(x) x.mesProveedor = Periodo).ToList()
                                TotalRegistros = conciliacionesProvRepository.tacs.Where(Function(x) x.mesProveedor = Periodo).Count()
@@ -3092,7 +3092,7 @@ Public Class Indicadores
 
                            For Each TipoConciliacion As String In TiposConciliaciones
                                Dim ConciliadosConTipoDeConciliacionCount As Integer = RegistrosEnFecha.Where(Function(x) x.TipoConciliacion = TipoConciliacion).Count()
-                               Dim ConciliadosConTipoDeConciliacionMonto As Integer = RegistrosEnFecha.Where(Function(x) x.TipoConciliacion = TipoConciliacion).Sum(Function(x) ConvertStringToDecimal(x.Comision))
+                               Dim ConciliadosConTipoDeConciliacionMonto As Integer = RegistrosEnFecha.Where(Function(x) x.TipoConciliacion = TipoConciliacion).ToList().Sum(Function(x) ConvertStringToDecimal(x.Comision))
                                Dim ConciliadosConTipoDeConciliacionPorcentaje As Double = (ConciliadosConTipoDeConciliacionCount * 100.0R) / (TotalRegistros)
 
                                If InvokeRequired Then
@@ -3556,8 +3556,8 @@ Public Class Indicadores
                            Dim RegistrosConciliados As Integer = RegistrosEnFecha.Where(Function(x) x.estatusConciliado IsNot Nothing).Count(Function(x) x.estatusConciliado = 1)
                            Dim RegistrosNoConciliados As Integer = RegistrosEnFecha.Count(Function(x) x.estatusConciliado Is Nothing)
 
-                           Dim RegistrosConciliadosMonto As Integer = RegistrosEnFecha.Where(Function(x) x.estatusConciliado IsNot Nothing).Where(Function(x) x.estatusConciliado = 1).Sum(Function(x) ConvertStringToDecimal(x.PAID_AGY))
-                           Dim RegistrosNoConciliadosMonto As Integer = RegistrosEnFecha.Where(Function(x) x.estatusConciliado Is Nothing).Sum(Function(x) ConvertStringToDecimal(x.PAID_AGY))
+                           Dim RegistrosConciliadosMonto As Integer = RegistrosEnFecha.Where(Function(x) x.estatusConciliado IsNot Nothing).Where(Function(x) x.estatusConciliado = 1).ToList().Sum(Function(x) ConvertStringToDecimal(x.PAID_AGY))
+                           Dim RegistrosNoConciliadosMonto As Integer = RegistrosEnFecha.Where(Function(x) x.estatusConciliado Is Nothing).ToList().Sum(Function(x) ConvertStringToDecimal(x.PAID_AGY))
 
                            Dim PorcentajeRegistrosConciliados As Double = (RegistrosConciliados * 100D) / CType(TotalRegistros, Double)
                            Dim PorcentajeRegistrosNoConciliados As Double = (RegistrosNoConciliados * 100D) / CType(TotalRegistros, Double)
