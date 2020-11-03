@@ -2600,9 +2600,9 @@ DECLARE
                     prioridad = Trim(arrayPrioridad(1)).ToString()
                     Select Case prioridad
 
-                        Case "AgentRef3|{LineNo}"
+                        Case "AgentRef2|{LineNo}"
 
-                            prioridad = "AgentRef3_LineNo"
+                            prioridad = "AgentRef2_LineNo"
 
                         Case Else
 
@@ -2712,9 +2712,9 @@ DECLARE
 
                             queryTablaProveedorC &= colExtra & comaProveedor
 
-                        ElseIf elProveedor(1) = "AgentRef3|{LineNo}" Then
+                        ElseIf elProveedor(1) = "AgentRef2|{LineNo}" Then
 
-                            colExtra = "CONCAT(AgentRef3,[LineNo])"
+                            colExtra = "CONCAT(AgentRef2,[LineNo])"
 
                             queryTablaProveedorC &= colExtra & comaProveedor
 
@@ -2725,11 +2725,11 @@ DECLARE
 
                         Select Case elProveedor(1)
 
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                queryTablaProveedorA &= "AgentRef3_LineNo" & tipoDato & comaProveedor
-                                queryTablaProveedorB &= "AgentRef3_LineNo" & comaProveedor
-                                columnProveedorBB &= "AgentRef3_LineNo" & bool & comaProveedor
+                                queryTablaProveedorA &= "AgentRef2_LineNo" & tipoDato & comaProveedor
+                                queryTablaProveedorB &= "AgentRef2_LineNo" & comaProveedor
+                                columnProveedorBB &= "AgentRef2_LineNo" & bool & comaProveedor
 
                             Case Else
 
@@ -2762,10 +2762,10 @@ DECLARE
 
                         Select Case elConciliados(1)
 
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                queryTablaConciliadosA &= "AgentRef3_LineNo" & bool & int & comaConciliados
-                                queryTablaConciliadosB &= "AgentRef3_LineNo" & bool & comaConciliados & puntoyComa
+                                queryTablaConciliadosA &= "AgentRef2_LineNo" & bool & int & comaConciliados
+                                queryTablaConciliadosB &= "AgentRef2_LineNo" & bool & comaConciliados & puntoyComa
 
                             Case Else
 
@@ -2796,10 +2796,10 @@ DECLARE
                     If (contadorConciliadosFinal >= 0) Then
 
                         Select Case elConciliadosFinal(1)
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                queryTablaConciliadosFinalA &= "AgentRef3_LineNo" & bool & int & comaConciliadosFinal
-                                queryTablaConciliadosFinalB &= "AgentRef3_LineNo" & bool & comaConciliadosFinal & puntoyComa
+                                queryTablaConciliadosFinalA &= "AgentRef2_LineNo" & bool & int & comaConciliadosFinal
+                                queryTablaConciliadosFinalB &= "AgentRef2_LineNo" & bool & comaConciliadosFinal & puntoyComa
 
                             Case Else
 
@@ -2831,10 +2831,10 @@ DECLARE
                     If (contadorConciliadosResultado >= 0) Then
 
                         Select Case elConciliadosResultado(1)
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                queryTablaConciliadosResultadoA &= "AgentRef3_LineNo" & bool & int & comaConciliadosResultado
-                                queryTablaConciliadosResultadoB &= "AgentRef3_LineNo" & bool & comaConciliadosResultado & puntoyComa
+                                queryTablaConciliadosResultadoA &= "AgentRef2_LineNo" & bool & int & comaConciliadosResultado
+                                queryTablaConciliadosResultadoB &= "AgentRef2_LineNo" & bool & comaConciliadosResultado & puntoyComa
 
                             Case Else
 
@@ -2865,8 +2865,8 @@ DECLARE
 
 
                         Select Case elConciliadosInsert(1)
-                            Case "AgentRef3|{LineNo}"
-                                queryInsertConciliadosA &= "AgentRef3_LineNo" & bool & comaConciliadosInsert & puntoyComa
+                            Case "AgentRef2|{LineNo}"
+                                queryInsertConciliadosA &= "AgentRef2_LineNo" & bool & comaConciliadosInsert & puntoyComa
                             Case Else
                                 queryInsertConciliadosA &= elConciliadosInsert(1) & bool & comaConciliadosInsert & puntoyComa
                         End Select
@@ -2892,10 +2892,10 @@ DECLARE
                     If (contadorConciliadosFinalInsert >= 0) Then
 
                         Select Case elConciliadosFinalInsert(1)
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                queryInsertConciliadosFinalA &= "AgentRef3_LineNo" & bool & comaConciliadosFinalInsert
-                                queryInsertConciliadosFinalB &= "SUM(" & "AgentRef3_LineNo" & bool & ") AS " & "AgentRef3_LineNo" & bool & comaConciliadosFinalInsert
+                                queryInsertConciliadosFinalA &= "AgentRef2_LineNo" & bool & comaConciliadosFinalInsert
+                                queryInsertConciliadosFinalB &= "SUM(" & "AgentRef2_LineNo" & bool & ") AS " & "AgentRef2_LineNo" & bool & comaConciliadosFinalInsert
 
                             Case Else
 
@@ -2926,10 +2926,10 @@ DECLARE
                     If (contadorUpdate >= 0) Then
 
                         Select Case elUpdate(1)
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                queryUpdateA &= "IIF(temp." & "AgentRef3_LineNo" & bool & " = 1,'" & "AgentRef3|{LineNo}" & ",','')" & comaUpdate & ""
-                                queryUpdateB &= "IIF(temp." & "AgentRef3_LineNo" & bool & " = 0,'" & "AgentRef3|{LineNo}" & ",','')" & comaUpdate & ""
+                                queryUpdateA &= "IIF(temp." & "AgentRef2_LineNo" & bool & " = 1,'" & "AgentRef2|{LineNo}" & ",','')" & comaUpdate & ""
+                                queryUpdateB &= "IIF(temp." & "AgentRef2_LineNo" & bool & " = 0,'" & "AgentRef2|{LineNo}" & ",','')" & comaUpdate & ""
                             Case Else
                                 queryUpdateA &= "IIF(temp." & elUpdate(1) & bool & " = 1,'" & elUpdate(1) & ",','')" & comaUpdate & ""
                                 queryUpdateB &= "IIF(temp." & elUpdate(1) & bool & " = 0,'" & elUpdate(1) & ",','')" & comaUpdate & ""
@@ -2966,9 +2966,9 @@ DECLARE
                         diasRango = el(3)
 
                         Select Case columnProveedor
-                            Case "AgentRef3|{LineNo}"
+                            Case "AgentRef2|{LineNo}"
 
-                                columnProveedor = "AgentRef3_LineNo"
+                                columnProveedor = "AgentRef2_LineNo"
 
                             Case Else
                                 columnProveedor = el(1)
@@ -3017,9 +3017,9 @@ DECLARE
                             selectorColumna = ""
                             selectorColumna = cc(1)
                             Select Case selectorColumna
-                                Case "AgentRef3|{LineNo}"
+                                Case "AgentRef2|{LineNo}"
 
-                                    selectorColumna = "AgentRef3_LineNo"
+                                    selectorColumna = "AgentRef2_LineNo"
 
                                 Case Else
                                     selectorColumna = cc(1)

@@ -372,13 +372,13 @@ Namespace CapaNegocio
 
                     Select Case Me.ValidarOnyx
                         Case 1
-                            Me.NombreCondicion = "[UniqueBookingID|{LineNo} <---> AgentRef3|{LineNo}][TEXTO](IGUALDAD)----2"
+                            Me.NombreCondicion = "[UniqueBookingID|{LineNo} <---> AgentRef2|{LineNo}][TEXTO](IGUALDAD)----2"
                             Me.AddCondicion()
                         Case 2
                             Me.NombreCondicion = "[AgentRef3|{LineNo} <---> AgentRef3|{LineNo}][TEXTO](IGUALDAD)----2"
                             Me.AddCondicion()
                         Case Else
-                            Me.NombreCondicion = "[UniqueBookingID|{LineNo} <---> AgentRef3|{LineNo}][TEXTO](IGUALDAD)----2"
+                            Me.NombreCondicion = "[UniqueBookingID|{LineNo} <---> AgentRef2|{LineNo}][TEXTO](IGUALDAD)----2"
                             Me.AddCondicion()
                     End Select
 

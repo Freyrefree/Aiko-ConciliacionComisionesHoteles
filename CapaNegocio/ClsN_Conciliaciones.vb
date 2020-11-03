@@ -2085,7 +2085,7 @@ Namespace CapaNegocio
 
             'Validar condicion especial
             Dim condicionBool As Boolean
-            Dim condicionEspecial As String = "AgentRef3|{LineNo}"
+            Dim condicionEspecial As String = "AgentRef2|{LineNo}"
             Dim listaB As List(Of List(Of String))
             Dim listaC As New List(Of List(Of String))
             listaC.AddRange(lista)
@@ -2194,7 +2194,7 @@ Namespace CapaNegocio
 
                         'If (count = 0) Then
                         'If (count = 1) Then
-                        If (columnProveedorB = "AgentRef3|{LineNo}") Then
+                        If (columnProveedorB = "AgentRef2|{LineNo}") Then
 
 
                             concatA = "CONCAT("
@@ -2234,7 +2234,7 @@ Namespace CapaNegocio
 
                             'If (count = 0) Then
                             'If (count = 1) Then
-                            If (columnProveedorB = "AgentRef3|{LineNo}") Then
+                            If (columnProveedorB = "AgentRef2|{LineNo}") Then
 
                                 concatA = "CONCAT("
                                 concatB = ")"
@@ -2263,7 +2263,7 @@ Namespace CapaNegocio
 
                             'If (count = 0) Then
                             'If (count = 1) Then
-                            If (columnProveedorB = "AgentRef3|{LineNo}") Then
+                            If (columnProveedorB = "AgentRef2|{LineNo}") Then
 
                                 concatA = "CONCAT("
                                 concatB = ")"

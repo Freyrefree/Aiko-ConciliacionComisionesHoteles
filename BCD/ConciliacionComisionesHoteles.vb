@@ -4899,9 +4899,9 @@ Public Class ConciliacionComisionesHoteles
 
         FillComboProveedores()
 
-        DTPFechaProveedor.Value = "01/11/2019"
-        DTPInicio.Value = "01/11/2019"
-        DTPFin.Value = "01/11/2019"
+        DTPFechaProveedor.Value = "13/05/2020"
+        DTPInicio.Value = "13/05/2020"
+        DTPFin.Value = "13/05/2020"
 
 
 
